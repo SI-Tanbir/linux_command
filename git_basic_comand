@@ -1,0 +1,24 @@
+466  git clone https://github.com/SI-Tanbir/Linux_commnad.git # clone any repo
+
+
+  480  git status
+  482  git config --global user.email "[#you email]"
+  483  git config --global user.name "[#you github user name]"
+  
+  
+  484  git revert e19811c37d2bb5f577811d814d29a5d3a01c3873 # i don't know what it do?
+  485  git revert e19811c37d2bb5f577811d814d29a5d3a01c3873 --force
+  486  git revert e19811c37d2bb5f577811d814d29a5d3a01c3873 -force
+  487  git revert e19811c37d2bb5f577811d814d29a5d3a01c3873 -f
+  488  git revert -f e19811c37d2bb5f577811d814d29a5d3a01c3873 
+  489  git revert -m e19811c37d2bb5f577811d814d29a5d3a01c3873 
+  490  git revert -f e19811c37d2bb5f577811d814d29a5d3a01c3873 
+  491  git revert --force e19811c37d2bb5f577811d814d29a5d3a01c3873 
+  
+  
+  492  git reset [your comit stage number ] #reset specific commit stage number  
+  
+  493  git status 
+  494  git add .
+  495  git commit -m "reset to the old commit"
+  496  git push # NEED TOKEN TO PUSH IN GITHUB.. Token you find in github setting
