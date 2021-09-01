@@ -4,7 +4,8 @@ git config --global user.email "[#you email]"
 git config --global user.name "[#you github user name]"
 git reset [your comit stage number ] #reset specific commit stage number  
    
-git add . #add local file so that we can commit & push
+git add . #add local file so that we can commit & push../. the dot sign is for to add all file you can specify
+the name of the file
 git commit -m "ssssssssssssss"  #to commit our changes 
 git push # update in github.. NEED TOKEN TO PUSH IN GITHUB.. Token you find in github setting
 git pull # update the locate directory from github
