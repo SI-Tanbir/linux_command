@@ -1,4 +1,4 @@
-
+pidof [the name of package] #to get the pid of running package 
 uname -a #to see the karnel, cpu arcritech
  sudo apt install <deb name> #install package
  
