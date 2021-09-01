@@ -1,4 +1,7 @@
+top #to see the all background running process and see there pid
 pidof [the name of package] #to get the pid of running package 
+kil -9 [pid ...pid..] #kill runing pacakge
+killall [pacakage name] #another way to kill running process
 uname -a #to see the karnel, cpu arcritech
  sudo apt install <deb name> #install package
  
