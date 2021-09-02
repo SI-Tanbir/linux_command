@@ -1,8 +1,32 @@
+help pwd #see the help page
+
+man -k pwd #search in man page whether pwd manual page exits 
+
+
+#THING you see in man page their meaning :-------
+ 
+  Section                            Meaning
+[THING]                    THING is optional.
+<THING>  			         THING is mandatory (required)
+THING ...			    	   THING can be repeated (limitlessly)
+THING1 | THING2		           Use THING1 OR THING2. Not Both.
+[THING in a Italics word]     Replace THING with whatever is appropriate.
+
+---------
+----
+--
+
+
 top #to see the all background running process and see there pid
+
 pidof [the name of package] #to get the pid of running package 
+
 kil -9 [pid ...pid..] #kill runing pacakge
+
 killall [pacakage name] #another way to kill running process
+
 uname -a #to see the karnel, cpu arcritech
+
  sudo apt install <deb name> #install package
  
 sudo apt-mark hold [pkg name] #hold the spcific version of pakage so that apt upgrade wouldn't install it
@@ -21,6 +45,11 @@ which cal #show where the command is
     9  date -u
    10  date --universal
 
+
+
+---------
+--
+-
 
 
    26  ls -l
