@@ -14,29 +14,15 @@ sudo apt-mark showhold #list of pakage which are hold
 sudo shutdown -hP 60 # we can also international hours shedule to shutdown ex. sudo shutdown -hP 16:00 
 sudo apt list | grep [pacakage] # search pacakage easily rather than use apt serach
  
-3  echo $path 
-    4  echo $PATH
-    5  which cal
-    6  where echo
-    7  which echo
+echo $PATH # it simply echoing the  path of all bash file,to see which files are responsible for interprating the command .
+ 
+which cal #show where the command is
     8  date
     9  date -u
    10  date --universal
-   11  echo man
-   12  man echo
-   13  man -k which
-   14  man  which
-   15  which date cal]
-   16  which date cal
-   17  clr
-   18  clear
-   19  slefdj
-   20  which -a date
-   21  which -a date cal
-   22  man  -k "files"
-   23  man  -k "list dir"
-   24  man   "list dir"
-   25  man  -k "list dir"
+
+
+
    26  ls -l
    27  ls -al
    28  ls -lh
