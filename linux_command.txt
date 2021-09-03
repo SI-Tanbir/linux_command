@@ -1,3 +1,11 @@
+blkid #to see uuid of disk block
+lsblk #see the dev/sdx of file
+
+how can we automount any drive ?
+-- you need to add file uiid & path you want to mount ...
+--use sudo nano /etc/fstab file than restarted 
+
+
 help pwd #see the help page
 
 man -k pwd #search in man page whether pwd manual page exits 
