@@ -1,0 +1,1601 @@
+# Notes linux basic command
+
+# #finding file and directiory
+
+`find . -name thisfile.txt` #it will find the thisfile.txt name in this current directory  and the dot means current directory
+
+ `grep -r "hello"`  # it will find the hello name in this dirctory files and folder ..no mater how many file is it’s useful in finding correct information form large file and folder
+
+## 
+
+## #paramspider usease:-
+
+Discover URLs for a single domain:
+
+```
+paramspider -d example.com #remove any https:// from it
+```
+
+Discover URLs for multiple domains from a file:
+
+```
+paramspider -l domains.txt
+```
+
+Stream URLs on the termial:
+
+```
+paramspider -d example.com -s
+```
+
+Set up web request proxy:
+
+```
+paramspider -d example.com --proxy '127.0.0.1:7890'
+```
+
+Adding a placeholder for URL parameter values (default: "FUZZ"):
+
+ `paramspider -d example.com -p '"><h1>reflection</h1>'`
+
+grep -E "( ?uri=| ?continue=| ?window=| ?View=| ?show=| ?open=| ?redirect=| ?Path=| ?url=| ?out=| ?to=| ?Dir=| ?navigation=| ?file=| ?reference=| ?Html=| ?data=| ?site=| ?host=| ?Page=| ?port=| ?next=| ?feed=| ?Return=| ?callback=| ?val=| ?doman=| ?Return_url=| ?validate=| ?returnurl=| ?return_to=| ?Currurl=| ?relaystate=| ?successuri=| ?exit_uri=| ?next=| ?url=| ?url=2f%2f| ?next=| ?next=$2f%2f| ?url=//| ?url=$2f%2f| ?url=//| /redirect/| /cgi-bin/redirect.cgi?| /out/| /out?/| /out?//| /out?/\\| /out?///| ?view=| ?view=/| ?view=//| ?view=/| ?view=///| /login?to=| /login?to=/| /login?to=//| /login?to=/| /login?to=///)" www.satda.tmd.go.th.txt | tee sort.txt
+
+grep "=" www.satda.tmd.go.th.txt | tee sort.txt
+
+
+
+git init
+1998  git remote add origin https://github.com/SI-Tanbir/bug_methodology
+1999  git add note
+2000  git commit -m "first commit"
+2001  git push -u origin master
+2002  history
+
+1. **git init**: Initialize a new Git repository in the current directory. This creates a hidden `.git` directory where Git stores its internal data and configuration.
+2. **git clone [repository URL]**: Clone an existing Git repository from a remote server to your local machine. This creates a copy of the repository including all branches and commit history.
+3. **git add [file(s)]**: Stage changes for commit. This tells Git to include the specified file(s) in the next commit. You can use `git add .` to stage all changes in the current directory.
+4. **git commit -m "Commit message"**: Commit staged changes to the repository with a descriptive commit message. This creates a new snapshot of your project's current state.
+5. **git status**: Check the status of the working directory and staged changes. This shows which files are modified, staged, or untracked.
+6. **git pull**: Fetch changes from the remote repository and merge them into the current branch. This is used to synchronize your local repository with changes made by others.
+7. **git push**: Push committed changes from your local repository to the remote repository. This is used to share your work with others.
+8. **git branch**: List all branches in the repository. This shows both local and remote branches, and highlights the currently active branch.
+9. **git checkout [branch name or commit hash]**: Switch to a different branch or restore the working directory to a specific commit. This allows you to navigate between different snapshots of your project.
+10. **git merge [branch name]**: Merge changes from one branch into the current branch. This combines the commit history of both branches and resolves any conflicting changes.
+11. **git remote -v**: List all remote repositories associated with the local repository. This shows the URL of each remote repository and their corresponding names.
+12. **git log**: Display the commit history of the repository. This shows all commits, their authors, timestamps, and commit messages.
+13. **git diff**: Show the differences between the working directory and the staging area (changes to be staged) or between the staging area and the last commit (changes to be committed).
+
+These are some of the fundamental Git commands to help you manage your version control workflow. As you become more comfortable with Git, you can explore additional commands and features to enhance your workflow.
+
+#website report
+
+6.6 Recon-ng
+recon-ng149 is a module-based framework for web-based information gathering. Recon-ng displays
+the results of a module to the terminal but it also stores them in a database. Much of the power of
+recon-ng lies in feeding the results of one module into another, allowing us to quickly expand the
+scope of our information gathering.
+Let’s use recon-ng to compile interesting data about MegaCorp One. To get started, let’s simply run
+recon-ng:
+149
+(Tim Tomes, 2019), https://github.com/lanmaster53/recon-ng
+PWK 2.0
+Copyright © Offensive Security Ltd. All rights reserved.
+148Penetration Testing with Kali Linux 2.0
+
+kali@kali:~$ recon-ng
+[*] Version check disabled.
+Sponsored by...
+/\
+/ \\ /\
+/\ /\/ \\V \/\
+/ \\/ // \\\\\ \\ \/\
+// // BLACK HILLS \/ \\
+[www.blackhillsinfosec.com](http://www.blackhillsinfosec.com/)
+
+---
+
+---
+
+---
+
+---
+
+---
+
+## |***] | / || |
+|
+| |***_ |____ |
+|
+|
+\_ |
+| |____
+|
+| **| |** |____
+[www.practisec.com](http://www.practisec.com/)
+[recon-ng v5.0.0, Tim Tomes (@lanmaster53)]
+[*] No modules enabled/installed.
+[recon-ng][default] >
+Listing 196 - Starting recon-ng
+According to the output, we need to install various modules to use recon-ng.
+We can add modules from the recon-ng “Marketplace”.150 We’ll search the marketplace from the
+main prompt with marketplace search, providing a search string as an argument.
+In this example, we will search for modules that contain the term github:
+recon-ng][default] > marketplace search github
+[*] Searching module index for 'github'...
++------------------------------------------------------------------------------------+
+|
+Path
+| Version |
+Status
+| D | K |
++------------------------------------------------------------------------------------+
+| recon/companies-multi/github_miner
+| 1.0
+| not installed |
+| * |
+| recon/profiles-contacts/github_users
+| 1.0
+| not installed |
+| * |
+| recon/profiles-profiles/profiler
+| 1.0
+| not installed |
+|
+|
+| recon/profiles-repositories/github_repos
+| 1.0
+| not installed |
+| * |
+| recon/repositories-profiles/github_commits
+| 1.0
+| not installed |
+| * |
+| recon/repositories-vulnerabilities/github_dorks | 1.0
+| not installed |
+| * |
++------------------------------------------------------------------------------------+
+D = Has dependencies. See info for details.
+K = Requires keys. See info for details.
+Listing 197 - Searching the Marketplace for GitHub modules
+Notice that some of the modules are marked with an asterisk in the “K” column. These modules
+require credentials or API keys151 for third-party providers. The recon-ng wiki152 maintains a short
+150(Tim Tomes, 2019), https://github.com/lanmaster53/recon-ng/wiki/Features#module-marketplace
+151(Wikipedia, 2019) https://en.wikipedia.org/wiki/Application_programming_interface_key
+152(Tim Tomes, 2019), https://github.com/lanmaster53/recon-ng-marketplace/wiki/API-Keys
+PWK 2.0
+Copyright © Offensive Security Ltd. All rights reserved.
+149Penetration Testing with Kali Linux 2.0
+list of the keys used by its modules. Some of these keys are available to free accounts, while others
+require a subscription.
+We can learn more about a module by using marketplace info followed by the module name.
+Since the GitHub modules require API keys, let’s use this command to examine the recon/domains-
+hosts/google_site_web module:
+[recon-ng][default] > marketplace info recon/domains-hosts/google_site_web
++------------------------------------------------------------------------------+
+| path
+| recon/domains-hosts/google_site_web
+|
+| name
+| Google Hostname Enumerator
+|
+| author
+| Tim Tomes (@lanmaster53)
+|
+| version
+| 1.0
+|
+| last_updated | 2019-06-24
+|
+| description
+| Harvests hosts from [Google.com](http://google.com/) by using the 'site' operator. |
+| required_keys | []
+|
+| dependencies | []
+|
+| files
+| []
+|
+| status
+| not installed
+|
++------------------------------------------------------------------------------+
+[recon-ng][default] >
+Listing 198 - Getting information on a module
+According to its description, this module searches Google with the “site” operator and it doesn’t
+require an API key. Let’s install the module with marketplace install:
+[recon-ng][default] > marketplace install recon/domains-hosts/google_site_web
+[*] Module installed: recon/domains-hosts/google_site_web
+[*] Reloading modules...
+[recon-ng][default] >
+Listing 199 - Installing a module
+After installing the module, we can load it with module load followed by its name. Then, we’ll use
+info to display details about the module and required parameters:
+[recon-ng][default] > modules load recon/domains-hosts/google_site_web
+[recon-ng][default][google_site_web] > info
+Name: Google Hostname Enumerator
+Author: Tim Tomes (@lanmaster53)
+Version: 1.0
+Description:
+Harvests hosts from [Google.com](http://google.com/) by using the 'site' search operator. Updates the
+'hosts' table with the results.
+Options:
+Name
+
+## SOURCE
+PWK 2.0
+Current Value
+
+## default
+Required
+
+## yes
+Description
+
+## source of input (see 'show info' for details)
+Copyright © Offensive Security Ltd. All rights reserved.
+150Penetration Testing with Kali Linux 2.0
+Source Options:
+default
+<string>
+<path>
+query <sql>
+SELECT DISTINCT domain FROM domains WHERE domain IS NOT NULL
+string representing a single input
+path to a file containing a list of inputs
+database query returning one column of inputs
+[recon-ng][default][google_site_web] >
+Listing 200 - Using recon/domains-hosts/google_site_web
+Notice that the output contains additional information about the module now that we’ve installed
+and loaded it. According to the output, the module requires the use of a source, which is the target
+we want to gather information about.
+In this case, we will use options set SOURCE [megacorpone.com](http://megacorpone.com/) to set our target domain:
+[recon-ng][default][google_site_web] > options set SOURCE [megacorpone.com](http://megacorpone.com/)
+SOURCE => [megacorpone.com](http://megacorpone.com/)
+Listing 201 - Setting a source
+Finally, we run the module:
+[recon-ng][default][google_site_web] > run
+
+## [MEGACORPONE.COM](http://megacorpone.com/)
+
+## [*] Searching Google for: site:megacorpone.com
+[*] [host] [www.megacorpone.com](http://www.megacorpone.com/) (<blank>)
+[*] [host] [vpn.megacorpone.com](http://vpn.megacorpone.com/) (<blank>)
+[*] [host] [www2.megacorpone.com](http://www2.megacorpone.com/) (<blank>)
+[*] [host] [siem.megacorpone.com](http://siem.megacorpone.com/) (<blank>)
+[*] Searching Google for: site:megacorpone.com -site:www.megacorpone.com -site:vpn.meg
+[acorpone.com](http://acorpone.com/) -site:www2.megacorpone.com -site:siem.megacorpone.com
+
+## SUMMARY
+
+## [*] 4 total (4 new) hosts found.
+Listing 202 - Running a module
+The results mirror what we found from the Netcraft DNS search. However, we haven’t wasted our
+time here. Recon-ng stores results in a local database and these results will feed into other recon-
+ng modules.
+We can use the show hosts command to view stored data:
+[recon-ng][default][google_site_web] > back
+[recon-ng][default] > show
+Shows various framework items
+Usage: show <companies|contacts|credentials|domains|hosts|leaks|locations|netblocks|po
+rts|profiles|pushpins|repositories|vulnerabilities>
+PWK 2.0
+Copyright © Offensive Security Ltd. All rights reserved.
+151Penetration Testing with Kali Linux 2.0
+[recon-ng][default] > show hosts
++--------------------------------------------------------------------------------+
+| rowid |
+host
+| ip_address | region | country |
+module
+|
++--------------------------------------------------------------------------------+
+| 1
+| [www.megacorpone.com](http://www.megacorpone.com/) |
+|
+|
+| google_site_web |
+| 2
+| [vpn.megacorpone.com](http://vpn.megacorpone.com/) |
+|
+|
+| google_site_web |
+| 3
+| [www2.megacorpone.com](http://www2.megacorpone.com/) |
+|
+|
+| google_site_web |
+| 4
+| [siem.megacorpone.com](http://siem.megacorpone.com/) |
+|
+|
+| google_site_web |
++--------------------------------------------------------------------------------+
+[*] 4 rows returned
+[recon-ng][default] >
+Listing 203 - Show hosts
+We have four hosts in our database but no additional information on them. Perhaps another module
+can fill in the IP addresses.
+Let’s examine recon/hosts-hosts/resolve with marketplace info:
+[recon-ng][default] > marketplace info recon/hosts-hosts/resolve
++-------------------------------------------------------------------------------+
+| path
+| recon/hosts-hosts/resolve
+|
+| name
+| Hostname Resolver
+|
+| author
+| Tim Tomes (@lanmaster53)
+|
+| version
+| 1.0
+|
+| last_updated | 2019-06-24
+|
+| description
+| Resolves the IP address for a host. Updates the 'hosts' table |
+| required_keys | []
+|
+| dependencies | []
+|
+| files
+| []
+|
+| status
+| installed
+|
++-------------------------------------------------------------------------------+
+[recon-ng][default] >
+Listing 204 - Module information for recon/hosts-hosts/resolve
+The module description suits our needs so we will install it with marketplace install:
+[recon-ng][default] > marketplace install recon/hosts-hosts/resolve
+[*] Module installed: recon/hosts-hosts/resolve
+[*] Reloading modules...
+Listing 205 - Installing the resolve module
+An “Invalid command” error may indicate that we are at the wrong command
+level. If this happens, run back to return to the main recon-ng prompt and try the
+command again.
+PWK 2.0
+Copyright © Offensive Security Ltd. All rights reserved.
+152Penetration Testing with Kali Linux 2.0
+Once the module is installed, we can use it with modules load, and run info to display information
+about the module and its options:
+[recon-ng][default] > modules load recon/hosts-hosts/resolve
+[recon-ng][default][resolve] > info
+Name: Hostname Resolver
+Author: Tim Tomes (@lanmaster53)
+Version: 1.0
+Description:
+Resolves the IP address for a host. Updates the 'hosts' table with the results.
+Options:
+Name
+
+## SOURCE
+Current Value
+
+## default
+Source Options:
+default
+IS NULL
+<string>
+<path>
+query <sql>
+Required
+
+## yes
+Description
+
+source of input (see 'show info' for details)
+SELECT DISTINCT host FROM hosts WHERE host IS NOT NULL AND ip_address
+string representing a single input
+path to a file containing a list of inputs
+database query returning one column of inputs
+Comments:
+
+- Note: Nameserver must be in IP form.
+Listing 206 - Installing and viewing recon/hosts-hosts/resolve
+As is clear from the above output, this module will resolve the IP address for a host.
+We need to provide the IP address we want to resolve as our source. We have four options we can
+set for the source: default, string, path, and query. Each option has a description alongside it as
+shown in Listing 206. For example, in the “google_site_web” recon-ng module, we used a string
+value.
+However, we want to leverage the database this time. If we use the “default” value, recon-ng will
+look up the host information in its database for any records that have a host name but no IP
+address.
+As shown in Listing 203, we have four hosts without IP addresses. If we select a “default” source,
+the module will run against all four hosts in our database automatically.
+Let’s try this out by leaving our source set to “default” and then run the module:
+[recon-ng][default][resolve] > run
+[*] [www.megacorpone.com](http://www.megacorpone.com/) => 38.100.193.76
+[*] [vpn.megacorpone.com](http://vpn.megacorpone.com/) => 38.100.193.77
+[*] [www2.megacorpone.com](http://www2.megacorpone.com/) => 38.100.193.79
+[*] [siem.megacorpone.com](http://siem.megacorpone.com/) => 38.100.193.89
+Listing 207 - Running recon/hosts-hosts/resolve
+Nice. We now have IP addresses for the four domains.
+PWK 2.0
+Copyright © Offensive Security Ltd. All rights reserved.
+153Penetration Testing with Kali Linux 2.0
+If we show hosts again, we can verify the database has been updated with the results of both
+modules:
+[recon-ng][default][resolve] > show hosts
+
+#invironment variable it store path of certain route
+
+kali@kali:~$ echo $USER
+kali
+kali@kali:~$ echo $PWD
+/home/kali
+kali@kali:~$ echo $HOME
+
+echo $PATH
+
+export pie=3.1415 , var pie =3.1416#to make invironment variable
+
+echo "$$” # to see pid of this shell
+
+#install pacakge 
+
+sudo dpkg -i man-db_2.7.0.2-5_amd64.deb
+
+- `dpkg --remove <package>`: This command removes a package from the system.
+- `dpkg --configure <package>`: This command configures a package that has been unpacked but not yet configured.
+- `dpkg -l`: This command lists all installed packages on the system.
+- `apt-get install <package>`
+
+#autostart  a service on startup
+
+sudo systemctl start ssh
+sudo ss -antlp | grep sshd
+
+systemctl list-unit-files 
+
+#learning resourse
+
+1. What is bug bounty?
+
+Identification and reporting of bugs and vulns in a responsible way.
+
+1. All depends on interest and hardwork, not on degree, age, branch, college, etc.
+2. What to study?
+3. Internet, HTTP, TCP/IP
+4. Networking
+5. Command line
+6. Linux
+7. Web technologies, javascript, php, java
+8. Atleast 1 prog language (Python/C/JAVA/Ruby..)
+9. Choose your path (imp)
+10. Web pentesting
+11. Mobile pentesting
+12. Desktop apps
+13. Resources
+14. Books
+
+1. For web
+   1. Web app hackers handbook
+   2. Web hacking 101
+   3. Hacker's playbook 1,2,3
+   4. Hacking art of exploitation
+   5. Mastering modern web pen testing
+   6. OWASP Testing guide
+
+2. For mobile
+   1. Mobile application hacker's handbook
+
+1. Youtube channels
+
+1. Hacking
+   1. Live Overflow
+   2. Hackersploit
+   3. Bugcrowd
+   4. Hak5
+   5. Hackerone
+  2. Programming
+   1. thenewboston
+   2. codeacademy
+
+1. Writeups, Articles, blogs
+
+1. Medium (infosec writeups)
+  2. Hackerone public reports
+  3. [owasp.org](http://owasp.org/)
+  4. Portswigger
+  5. Reddit (Netsec)
+  6. DEFCON conference videos
+  7. Forums
+
+1. Practice (imp)
+2. Tools 1. Burpsuite 2. nmap 3. dirbuster 4. sublist3r 5. Netcat
+3. Testing labs
+
+1. DVWA
+  2. bWAPP
+  3. Vulnhub
+  4. Metasploitable
+  5. CTF365
+  6. Hack the box
+
+1. Start!
+2. Select a platform 1. Hackerone 2. Bugcrowd 3. Open bug bounty 4. Zerocopter 5. Antihack 6. Synack (private)
+3. Choose wisely (first not for bounty)
+4. Select a bug for hunt
+5. Exhaustive search
+6. Not straightforward always
+
+REPORT:
+
+1. Create a descriptive report
+2. Follow responsible disclosure
+3. Create POC and steps to reproduce
+4. Words of wisdom
+5. PATIENCE IS THE KEY, takes years to master, don't fall for overnight success
+6. Do not expect someone will spoon feed you everything.
+7. Confidence
+8. Not always for bounty
+9. Learn a lot
+10. Won't find at the beginning, don't lose hope
+11. Stay focused
+12. Depend on yourself
+13. Stay updated with infosec world
+
+┏━━━━━━━━━━━━━━━━━━┓ @Only_Hackers_Can_Join
+@onlinecourse360
+@filescopyright
+@GraphicsRecoursesBD   
+┗━━━━━━━━━━━━━━━━━━┛
+
+Free labs to train your skills in pentesting/CTF and Computer Science Skills.
+
+Best wishes for successful education!!
+
+- > Try Hack Me [https://tryhackme.com](https://tryhackme.com/)
+-> Attack-Defense [https://attackdefense.com](https://attackdefense.com/)
+-> alert to win https://alf.nu/alert1
+-> CMD Challenge [https://cmdchallenge.com](https://cmdchallenge.com/)
+-> Exploration Education [https://exploit.education](https://exploit.education/)
+-> Google CTF [https://capturetheflag.withgoogle.com](https://capturetheflag.withgoogle.com/)
+-> HackTheBox https://www.hackthebox.com/
+-> Defendtheweb https://defendtheweb.net/
+-> Hacksplaining https://www.hacksplaining.com/lessons
+-> Hacker101 [https://ctf.hacker101.com](https://ctf.hacker101.com/)
+-> Hacker Security [https://capturetheflag.com.br](https://capturetheflag.com.br/)
+-> Hacking-Lab https://www.hacking-lab.com/events/
+-> HSTRIKE [https://hstrike.com](https://hstrike.com/)
+-> ImmersiveLabs [https://immersivelabs.com](https://immersivelabs.com/)
+-> NewbieContest https://www.newbiecontest.org/
+-> OverTheWire [http://overthewire.org](http://overthewire.org/)
+-> Practical Pentest Labs [https://practicalpentestlabs.com](https://practicalpentestlabs.com/)
+-> Pentestlab [https://pentesterlab.com](https://pentesterlab.com/)
+-> Penetration Testing Practice Labs http://www.amanhardikar.com/mindmaps/Practice.html
+-> PentestIT LAB [https://lab.pentestit.ru](https://lab.pentestit.ru/)
+-> PicoCTF [https://picoctf.com](https://picoctf.com/)
+-> PWNABLE https://pwnable.kr/play.php
+-> Root-Me [https://www.root-me.org](https://www.root-me.org/)
+-> SANS Challenger [https://www.holidayhackchallenge.com](https://www.holidayhackchallenge.com/)
+-> SmashTheStack http://smashthestack.org/wargames.html
+-> The Cryptopals Crypto Challenges https://cryptopals.com/
+-> Vulnhub [https://www.vulnhub.com](https://www.vulnhub.com/)
+-> W3Challs [https://w3challs.com](https://w3challs.com/)
+-> WeChall [http://www.wechall.net](http://www.wechall.net/)
+-> HackerRank [https://www.hackerrank.com](https://www.hackerrank.com/)
+-> kaggle https://www.kaggle.com/
+-> Zenk-Security
+https://www.zenk-security.com/
+
+#docker
+
+sudo docker run -p 9090:8080 webgoat/webgoat:latest
+
+docker run -p 9090:3000 bkimminich/juice-shop
+
+lsof -i :9090 —to see who is using this port
+
+systemctl --user list-unit-files --type=service | grep enabled  #check all autostartups service in apps
+
+systemctl --user disable <service-name> #to disable the service or apps name you want to remove from auto starts
+
+sudo apt update
+sudo apt full-upgrade -y
+sudo apt update -y && sudo apt upgrade -y
+
+sudo apt-get install parrot-tools-full
+
+ulauncher #install form main source
+
+sudo apt install firefox-esr codium
+
+sudo apt install timeshift # backup making app
+
+---
+
+## —to change host name
+
+sudo nano /etc/hosts #give the hostname you want
+
+### output:
+
+---
+
+Host addresses
+
+127.0.0.1  localhost
+127.0.1.1  windows #we change it here
+::1        localhost ip6-localhost ip6-loopback
+ff02::1    ip6-allnodes
+ff02::2    ip6-allrouters
+
+---
+
+sudo nano /etc/hostname
+hostnamectl set-hostname windows
+sudo pkill ulauncher # delete app process
+
+pgrep firefox #serach process id
+
+sudo kill -9 (process id) # kill proces
+
+---
+
+---
+
+#to auto mount drive 
+blkid  
+lsblk
+
+lspci 
+
+sudo gedit /etc/fstab # to automount drive
+
+---
+
+---
+
+# foresice tools
+
+pdfinfo ransom-letter.pdf —pdf for forensice tool
+sudo apt install libimage-exiftool-perl
+51 deg 30' 51.90" N, 0 deg 5' 38.73" W51 deg 30' 51.90" N, 0 deg 5' 38.73" Wexiftool PHOTO.jpg | grep Camera
+sudo exiftool letter-image.jpg —image forensice tool
+sudo exiftool letter-image.jpg |grep camera
+
+---
+
+sudo apt search kazam
+sudo apt install kazam —kazam recoder
+sudo apt check
+sudo apt-get check
+sudo apt update
+sudo auto-cpufreq --stats
+
+—to automount drive
+
+lsblk
+blkid
+
+sudo gedit /etc/fstab —it a config file of auto mount drive
+
+---
+
+# #to make cpu auto clock
+autocpufreq
+sudo apt install auto-cpufreq
+sudo systemctl enable --now auto-cpufreq
+auto-cpufreq --stats
+sudo nano /etc/default/auto-cpufreq
+sudo cat /etc/default/auto-cpufreq
+sudo systemctl restart auto-cpufreq
+sudo gedit  /etc/default/auto-cpufreq
+sudo systemctl restart auto-cpufreq
+sudo auto-cpufreq -- -p powersave
+sudo auto-cpufreq --monitor
+sudo auto-cpufreq --disable
+auto-cpufreq --hel
+auto-cpufreq --help
+sudo auto-cpufreq --remove
+sudo auto-cpufreq --monitor
+sudo auto-cpufreq -- -p powersave
+sudo auto-cpufreq --status
+sudo auto-cpufreq --help
+sudo auto-cpufreq --staus
+sudo auto-cpufreq --stats
+sudo auto-cpufreq --install
+sudo auto-cpufreq -- -p powersave
+sudo auto-cpufreq --stats
+
+swapon —check swap
+
+wget [https://drive.google.com/drive/folders](https://drive.google.com/drive/folders/1nekAFvNpehFYaJe58Fg46590mYZSnAca)
+
+[/1nekAFvNpehFYaJe58Fg46590mYZSnAca](https://drive.google.com/drive/folders/1nekAFvNpehFYaJe58Fg46590mYZSnAca) -o Hacking_box-disk1.vmdk
+wget https://storage.googleapis.com/drive-bulk-export-anonymous/20231103T023617.572Z/4133399871716478688/156e4f2b-3a03-4c87-bb16-073ae1187599/1/9305472e-8ae1-4ea0-8d44-429100a9b984?authuser
+wget -c  <url> —to redownload where its left
+
+cat >>gigle.txt
+ls
+cat gigle
+cat gigle.txt
+ls
+echo "hello world!" >new.txt
+ls
+echo "hello world!" >>gigle.txt.txt
+echo "hello world!" >>gigle.txt
+ls
+cat gigle.txt
+echo "hello world!" >gigle.txt
+ls
+cat gigle.txt
+mv gigle.txt suckmydick.txt
+ls
+cat suckmydick.txt
+mv sucker fucker
+ls
+ls fuck
+ls fucker
+touch differentfile{js,html,py,cpp,c,sh,txt,dox}
+ls
+touch differentfile.{js,html,py,cpp,c,sh,txt,dox}
+ls
+date >date.txt
+ls
+cat date.txt
+ls
+nano heysukker
+nano newtest
+mousepad
+mousepad test
+sudo apt install mousepad
+mousepad helloworld
+ls
+cat helloworld
+vim hell
+vim le
+cd
+cd Desktop/
+ls
+mkdir letsplay
+cd letsplay/
+ls
+mkdir year[2001..2023]
+mkdir year{2000..2023}
+ls
+rm -r
+ls
+rm -r year
+ls
+rm *-r
+ls
+rm *-r
+rm -r year
+ls
+rm -r *
+ls
+mkdir new
+cd new
+touch hello{1..1000
+ls
+touch hello{1..1000}
+ls
+rm new -r
+touch new{1..1000}
+ls
+rm new* -r
+ls
+cd ..
+touch new{1...10000}
+ls
+touch new{1..1000}/new
+ls
+rm *-r
+ls
+rm * -r
+ls
+mkdir new{2..50000}
+ls
+rm new* -r
+ls
+touch secreatfile.txt
+mkdir fuckoff sucker loveyou
+ls
+cp screatfile.txt /sucker
+cp secreatfile.txt  /sucker
+sudo cp secreatfile.txt  /sucker
+ls
+ls /sucker
+ls sucker
+cd sucker/
+ls
+cd..
+ls
+cd ..
+ls
+cp secreatfile.txt  sucker/
+ls
+ls sucker/
+ls
+cd fuckoff/
+ls
+touch fuckyu{1..100}
+ls
+cd ..
+ls
+cp -r fuckoff loveyou -v
+s
+ls
+cp -r loveyou whoisyourmomoy
+ls
+ls whoisyourmomoy/
+cp -r loveyou whoisyourmomoy -v
+sl
+
+ls whoisyourmomoy/`
+
+ls whoisyourmomoy
+cp -r loveyou whoisyourmomoy -v
+ls
+ls whoisyourmomoy/
+ls loveyou/
+ls fuck
+ls fuckoff/
+sls
+ls
+cp secreatfile.txt gigle.txt
+ls
+gigle.txt >> HI Iam practive and having fun to cracking researchign
+echo gigle.txt >> HI Iam practive and having fun to cracking researchign
+cat gigle.txt
+sudo su
+ls
+sudo -i
+ls
+id
+id
+id
+ps
+us
+id
+id jhon
+idjon
+id john
+id discord
+hostname
+uname
+uname -r
+uname -a
+apropos usb
+apropos ls
+apropos ls*
+clear
+pgrep firefox
+pkill -9 firefox-esr
+sudo apt update --fix-missing
+sudo apt update
+sudo apt clearn
+sudo apt clean
+sudo apt autoremove
+sudo apt update
+sudo dpkg --configure -a
+sudo apt install pidgin
+sudo apt purge pidgin
+sudo apt purge pidgin-data
+sudo apt install torbrowser-launcher -y
+sudo apt autoremove
+sudo torbrowser-launcher
+torbrowser-launcher
+service tor start
+service tor status
+service tor stp
+service tor stop
+torbrowser-launcher
+ls
+mkdir ipvanish
+ls
+cd ipvanish/
+ls
+wget https://configs.ipvanish.com/configs/configs.zip
+ls
+unzip configs.zip
+ls
+mkdir vpn
+mv *.ovpn vpn
+ls
+ls vpn
+ls
+sudo openvpn --config teamdarkarmyuser.ovpn
+cd vpn
+ls
+sudo openvpn --config ipvanish-FR-Paris-par-a26.ovpn
+service tor status
+service tor start
+service tor status
+sudo su
+proxychains firefox [google.com](http://google.com/)
+sudo apt install proxychains
+firefox ping [youtube.com](http://youtube.com/)
+sudo nano /etc/proxychains.conf
+sudo gedit /etc/proxychains.conf
+sudo service tor stop
+sudo service tor start
+sudo service tor status
+proxychains firefox [duckduckgo.com](http://duckduckgo.com/)
+sudo gedit /etc/proxychains.conf
+proxychains firefox [www.duckduckgo.com](http://www.duckduckgo.com/)
+service tor restart
+proxychains firefox [www.duckduckgo.com](http://www.duckduckgo.com/)
+sudo apt purge tor proxychains
+sudo apt purge tor-data
+sudo apt autoremove
+sudo apt update
+sudo apt install tor
+sudo apt install proxychains
+systemctl enable tor.service
+sudo systemctl enable tor.service
+sudo systemctl start tor.service
+sudo systemctl status  tor.service
+sudo gedit /etc/proxychains.conf
+proxychains firefox [www.duckduckgo.com](http://www.duckduckgo.com/)
+proxychains -v
+service tor status
+proxychains
+man proxychains
+sudo apt update
+sudo apt install proxychains
+apt list --upgradable
+xvfb
+sudo nano /etc/proxychains.conf
+ls
+service tor status
+service tor stop
+service tor status
+sudo systemctl status service.tor
+history
+sudo systemctl status tor.service
+sudo systemctl stop tor.service
+sudo systemctl status tor.service
+service tor status
+sudo gedit /etc/proxychains.conf
+service tor start
+service tor status
+service tor stop
+service tor status
+proxychains firefox-esr ping [www.duckduckgo.com](http://www.duckduckgo.com/)
+sudo gedit /etc/proxychains.conf
+service tor status
+service tor start
+proxychains3
+proxychains3 firefox [duckduckgo.com](http://duckduckgo.com/)
+sudo gedit /etc/proxychains.conf
+sudo service tor status
+sudo service tor stop
+proxychains3 firefox [dnsleaktest.com](http://dnsleaktest.com/)
+sudo service tor restart
+proxychains3 firefox [dnsleaktest.com](http://dnsleaktest.com/)
+sudo gedit /etc/proxychains.conf
+proxychains3 firefox [dnsleaktest.com](http://dnsleaktest.com/)
+proxychains firefox [www.duckduckgo.com](http://www.duckduckgo.com/)
+proxychains3 firefox [www.duckduckgo.com](http://www.duckduckgo.com/)
+sudo gedit /etc/proxychains.conf
+service tor status
+proxychains3 firefox [www.duckduckgo.com](http://www.duckduckgo.com/)
+proxychains firefox [www.duckduckgo.com](http://www.duckduckgo.com/)
+sudo apt update
+ls
+firefox duckduckgo
+ifconfig
+sudo ifconfig down
+ifconfig
+sudo iwconfig down
+sudo ifconfig wlp0s20f3 down
+sudo ifconfig wlp0s20f3  hw ether 00:11:cf:34:34:7
+ifconfig
+sudo ifconfig wlp0s20f3 up
+ifconfig
+ls
+mkdir macchage
+ls
+cd macchage/
+ls
+sudo gedit [maccadd.sh](http://maccadd.sh/)
+history
+sudo gedit [maccadd.sh](http://maccadd.sh/)
+ls
+sudo chmod +x [maccadd.sh](http://maccadd.sh/)
+ls
+ls -l
+sudo ./maccadd.sh
+ls
+mv [maccadd.sh](http://maccadd.sh/) [macbash.sh](http://macbash.sh/)
+ls
+cat [macbash.sh](http://macbash.sh/)
+cp [macbash.sh](http://macbash.sh/) /etc/init.d/
+sudo   cp [macbash.sh](http://macbash.sh/) /etc/init.d/
+ls
+find -iname mac* /etc
+find /etc -iname mac*
+cd..
+cd ..
+ls
+find / -iname macof
+find / -iname "macof"
+sudo find / -iname "macof"
+cd /usr/share/bash-completion/completions/macof
+sudo -i
+git clone https://github.com/SusmithKrishnan/torghost.git
+ls
+ls torghost/
+rm -r torghost/
+sudo  rm -r torghost/
+ls
+git clone https://github.com/SusmithKrishnan/torghost.git
+cd torghost/
+ls
+pip install -r requirements.txt
+./build.sh
+torghost
+sudo apt search torghost
+./build.sh
+sudo apt-get install cython3
+./build.sh
+sudo apt-get install python3-dev
+./build.sh
+sudo gedit /etc/dhcp/dhclient.conf
+firefox
+curl https://saimei.ftp.acc.umu.se/tails/stable/tails-amd64-5.19/tails-amd64-5.19.img
+wget https://saimei.ftp.acc.umu.se/tails/stable/tails-amd64-5.19/tails-amd64-5.19.img
+ls
+cd ..
+ls
+cp *.jpg cosmos
+sudo cp *.jpg cosmos
+cd cosmos/
+sudo rm default.jpg
+sudo rm htb.jpg login.jpg
+ls
+l
+ls
+sudo gedit background-1.xml
+mkdir letsplay
+ls
+touch hey{1-100}.{jpg,py,sh}
+ls
+touch hey{1-100}{.jpg,.py,.sh}
+ls
+touch hell{1-10}{.jpg,py}
+ls
+touch hell{1-100}
+ls
+touch hell{1..10}{.jpg,py}
+ls
+rm -rv *.txt
+ls
+..
+ls
+mv -v new ../
+cp -v new ../
+cp -v loveyou../
+cp -v loveyou ../
+cp -rv loveyou ../
+ls
+rm -rf ../loveyou
+ls
+sudu -i
+sudo -i
+proxychains firefox [https://duckduckgo.com](https://duckduckgo.com/)
+ls
+sudo rm -rf **
+ls
+firefox [google.com](http://google.com/) torghost
+git clone https://github.com/SusmithKrishnan/torghost
+ls
+cd torghost/
+ls
+./build.sh
+pip install -r requirements.txt
+sudo python3 torghost
+sudo python3 [torghost.py](http://torghost.py/)
+sudo python3 [torghost.py](http://torghost.py/) -s
+sudo service tor statu
+sudo service tor status
+sudo service tor stop
+ls
+cd Desktop/
+ls
+cd letsplay/
+ls
+cd torghost/
+ls
+sudo python3 [torghost.py](http://torghost.py/) -s
+sudo python3 [torghost.py](http://torghost.py/) -x
+sudo python3 [torghost.py](http://torghost.py/) -h
+sudo gedit /etc/proxychains.conf
+sudo service tor start
+proxychains firefox-esr
+sudo service tor restart
+proxychains firefox-esr
+sudo service tor stop
+sudo service tor stats
+sudo service tor status
+ls
+sudo gedit /etc/proxychains.conf
+proxychains firefox-esr
+proxychains firefox
+proxychains firefox [duckduckgo.com](http://duckduckgo.com/)
+proxychains3 firefox [duckduckgo.com](http://duckduckgo.com/)
+proxychains firefox [duckduckgo.com](http://duckduckgo.com/)
+proxychains3 firefox-esr [duckduckgo.com](http://duckduckgo.com/)
+sudo gedit /etc/proxychains.conf
+proxychains firefox [duckduckgo.com](http://duckduckgo.com/)
+sudo apt purge proxychains
+sudo apt autoremove
+ls
+tar -xf proxychains-3.1.tar.gz
+ls
+cd proxychains-3.1/
+ls
+cat README
+ls
+cat
+cat TODO
+cat INSTALL
+ls
+sudo ./configure
+make
+sudo make
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get update
+sudo apt purge winehq
+sudo apt purge wine
+nano /home/shafikul/Documents/proxychains-3.1/proxychains/libproxychains.c
+make
+make all-recursive
+ls
+cd ..
+ls
+cd ..
+ls
+cd Do
+cd Downloads/
+ls
+cd Compressed/
+ls
+tar -xf proxychains-4.3.0.zip
+unzip proxychains-4.3.0.zip
+ls
+cd proxychains-4.3.0/
+ls
+cat TODO
+cat README.adoc
+ls
+sudo ./configure
+make
+sudo make
+ls
+sudo nano src/core.c
+ls
+sudo nano src/core.c
+make
+sudo nano src/core.c
+make
+sudo nano src/core.c
+make
+ls
+cd ..
+ls
+unzip proxychains-proxychains-4.4.0.zip
+ls
+cd proxychains-proxychains-4.4.0/
+ls
+sudo  ./configure
+make && make install
+sudo nano src/core.c
+date
+make uninstall
+sudo ./configure
+sudo make
+sudo make install
+rm -rf *.zip
+ls
+rm -rf .xz
+ls
+proxychains chromium [dnsleaktest.com](http://dnsleaktest.com/)
+chromium
+proxychains chromium [duckduckgo.com](http://duckduckgo.com/)
+proxychains4 chromium [duckduckgo.com](http://duckduckgo.com/)
+google-chrome
+proxychains google-chrome [www.duckduckgo.com](http://www.duckduckgo.com/)
+proxychains google-chrome [google.com](http://google.com/)
+sudo apt-get install checkinstall
+cd Documents/
+ls
+cd proxychains-3.1/
+ls
+./configure
+sudo checkinstall
+sudo make install
+sudo nano /etc/Proxychains.conf
+sudo apt search proxychains
+sudo proxychains4
+sudo apt install proxychains4
+ls
+sudo -i
+sudo service tor start
+sudo service tor status
+proxychain4 firefox [duckduckgo.com](http://duckduckgo.com/)
+proxychains firefox [duckduckgo.com](http://duckduckgo.com/)
+proxychains firefox-esr [duckduckgo.com](http://duckduckgo.com/)
+proxychains4 firefox-esr [duckduckgo.com](http://duckduckgo.com/)
+sudo nano /etc/proxychains4.conf
+sudo service tor status
+sudo service tor restart
+sudo service tor status
+proxychains4 firefox-esr [http://www.duckduckgo.com](http://www.duckduckgo.com/)
+sudo apt install chromium
+proxychains4 firefox-esr [http://www.duckduckgo.com](http://www.duckduckgo.com/)
+sudo service tor status
+proxychains  firefox-esr [http://www.duckduckgo.com](http://www.duckduckgo.com/)
+proxychains  chromium [dnsleaktest.com](http://dnsleaktest.com/)
+proxychains  firefox [dnsleaktest.com](http://dnsleaktest.com/)
+sudo service tor restarts
+sudo service tor restart
+proxychains  firefox [dnsleaktest.com](http://dnsleaktest.com/)
+timedatectl
+sudo timedatectl status | grep -i ntp
+sudo ntpdate [pool.ntp.org](http://pool.ntp.org/)
+timedatectl list-timezones
+timedatectl set-timezone Asia/Dhaka
+proxychains  firefox [dnsleaktest.com](http://dnsleaktest.com/)
+proxychains chromium
+proxychains google-chorme
+proxychains google-chrome
+tor
+sudo service tor status
+sudo service tor restart
+sudo service tor stop
+sudo apt purge chromium
+sudo gedit /etc/proxychains4.conf
+proxychains firefox [www.duckduckgo.com](http://www.duckduckgo.com/)
+sudo gedit /etc/proxychains4.conf
+proxychains firefox [www.duckduckgo.com](http://www.duckduckgo.com/)
+sudo gedit /etc/proxychains4.conf
+proxychains firefox [www.duckduckgo.com](http://www.duckduckgo.com/)
+sudo apt search thorium
+thorium
+thorium-browser
+sudo apt remove fdm
+fdm
+proxychains thorium-browser
+proxychains tor
+pid
+xd
+xs
+ps
+sudo kill -9 183066
+ps
+ls
+ps
+nmap --version
+sudo apt install nmap
+wireshark --version
+wireshare
+wireshark
+sudo apt update
+find apt
+find apt* /
+nmap -h
+wireshark
+sudo nmap [scanme.nmap.org](http://scanme.nmap.org/)
+sudo apt install curl
+sudo curl -fsSLo /usr/share/keyrings/brave-browser-beta-archive-keyring.gpg https://brave-browser-apt-beta.s3.brave.com/brave-browser-beta-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/brave-browser-beta-archive-keyring.gpg] https://brave-browser-apt-beta.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-beta.list
+sudo apt update
+sudo apt install brave-browser-beta
+sudo apt install curl
+sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+sudo apt update
+sudo apt install brave-browser
+brave-browser
+proxychains brave-browser
+brave-browser
+proxychains brave-browser
+sudo service tor start
+sudo service tor status
+history
+sudo nmap [scanme.nmap.org](http://scanme.nmap.org/)
+sudo proxychains nmap [scanme.nmap.org](http://scanme.nmap.org/)
+proxychains nmap [scanme.nmap.org](http://scanme.nmap.org/)
+sudo service tor stop
+sudo service tor status
+sudo systemctl NetworkManager restart
+sudo systemctl restart NetworkManager
+nmap 192.168.1.1
+ps
+xs
+us
+ps aux
+ifconfig
+nmap 192.168.1.1
+nmap 192.168.1.1/24
+sudo apt update && sudo apt install htop
+sudo apt purge freedownloadmanager
+cat /etc/apt/sources.list
+cat /etc/apt/listchanges.conf
+cat /etc/apt/apt.conf.d/
+ls
+cd /etc/apt/
+ls
+cat listchanges.conf
+cat sources.list
+cat sources.list.old
+ls
+cat trusted.gpg
+ls
+cd sources.list.d/
+ls
+cat brave-browser-beta.list
+sudo rm -v brave-browser-beta.list
+sudo rm -v winehq-bullseye.sources
+sudo rm -v freedownloadmanager.list
+ls
+sudo apt purge brave-browser
+ls
+sudo apt purge brave-browser-data
+sudo apt autoremove
+sudo apt clean
+ls
+rm -v brave-browser-release.list
+ls
+sudo rm -v brave-browser-release.list
+ls
+sudo apt update -y && sudo apt install htop -y
+ls
+sudo apt update
+sudo apt update -y && sudo apt install htop -y
+htop
+sudo apt update
+sudo nmap -sS 192.168.1.1
+sudo nmap -sS 192.168.1.1/24
+sudo nmap -sS 192.168.1.1-10
+sudo nmap -sS -p1-100 192.168.1.1-10
+sudo nmap -sS -p- 192.168.1.1-6
+sudo nmap -o 192.168.1.1-10
+sudo nmap -O 192.168.1.1-10
+sudo nmap -A 192.168.1.1
+sudo  nmap -sn 192.168.1.1/24
+sudo  nmap -O 192.168.1.1/24
+sudo  nmap -O 192.168.1.1-10
+hostname
+hostnamectl set-hostname windowss
+hostname
+hostnamectl set-hostname windows
+ls
+hostname
+sudo gedit /etc/proxychains4.conf
+sudo nano /etc/proxychains4.conf
+proxychains firefox [www.duckduckgo.com](http://www.duckduckgo.com/)
+sudo service tor start
+sudo gedit /etc/hosts
+sudo vim /etc/hosts
+
+sl
+ls
+host
+sudo apt update
+history
+sudo gedit /etc/host
+sudo nano /etc/host
+sudo gedit /etc/host.conf
+sudo nano /etc/host.conf
+sudo nano /etc/hostname
+sudo nano /etc/hosts
+sudo hostnamectl set-hostname windows
+cowsay -f eyes "WELCOME  SHAFIKUL" | lolcat -a -d
+cowsay -f eyes "WELCOME  SHAFIKUL" | lolcat -a -d 8
+cowsay -f eyes "WELCOME  SHAFIKUL" | lolcat -a -d 5
+cowsay -f eyes "WELCOME  SHAFIKUL" | lolcat -a -d 1
+cowsay -f eyes "WELCOME  SHAFIKUL" | lolcat -a -d 1 -i -f
+sdf
+cowsay -f eyes "WELCOME  SHAFIKUL" | lolcat -a -d 1
+cowsay -f eyes "WELCOME  SHAFIKUL" | lolcat -a -d 1
+cowsay -f eyes "WELCOME  SHAFIKUL" | lolcat -a -d 1 -s 400
+cowsay -f eyes "WELCOME  SHAFIKUL" | lolcat -a -d 1 -s 300
+cowsay -f slant  "WELCOME  SHAFIKUL" | lolcat -a -d 1 -s 300
+figlet -f slant  "WELCOME  SHAFIKUL" | lolcat -a -d 1 -s 300
+figlet -f slant -c  "WELCOME to  SHAFIKUL" | lolcat -a -d 1 -s 300
+figlet -f  "WELCOME to  SHAFIKUL" | lolcat -a -d 1 -s 300
+figlet -f digital -c  "WELCOME to  SHAFIKUL" | lolcat -a -d 1 -s 300
+figlet -f digital -c  "WELCOME  SHAFIKUL" | lolcat -a -d 1 -s 300
+figlet -f slant  "WELCOME  SHAFIKUL" | lolcat -a -d 1 -s 300
+sudo apt upate
+sudo apt update
+sudo apt install figlet lolcat
+figlet -f slant -c "Shafikul" | lolcat
+sudo apt install cowsay
+cowsay -f eyes "Hi"
+lolcat
+lolcat -h
+cowsay -f eyes "Hi" | lolcat
+cowsay -f eyes "Hi" | lolcat -p
+cowsay -f eyes "Shaikul" | lolcat -p
+lolcat -h
+cowsay -f eyes "Shaikul" | lolcat -p -F
+cowsay -f eyes "Shaikul" | lolcat -p -a
+lolcat -h
+cowsay -f eyes "Shaikul" | lolcat -p -a -s
+cowsay -f eyes "Shaikul" | lolcat -p -a -s 10
+cowsay -f eyes "Shaikul" | lolcat -p -a -s 5
+cowsay -f eyes "Shaikul" | lolcat -p -a -s 1
+cowsay -f eyes "Shaikul" | lolcat -p -a -s 40
+cowsay -f eyes "Shaikul" | lolcat -p -a -s 60
+cowsay -f eyes "Shaikul" | lolcat -p -a -s 90
+cowsay -f eyes "Shaikul" | lolcat -p -a -s 100
+cowsay -f eyes "Shaikul" | lolcat -p -a -s 150
+cowsay -f eyes "Shaikul" | lolcat -p -a -s 200
+lolcat -h
+cowsay -f eyes "Shaikul" | lolcat -p -a -s 300 -i
+cowsay -f eyes "Shaikul" | lolcat -p -a -s 300
+cowsay -f eyes "Shaikul" | lolcat -p -a -s 300 -t
+cowsay -f eyes "WELCOME  SHAFIKUL" | lolcat -p -a -s 300 -t
+cowsay -f eyes "WELCOME  SHAFIKUL" | lolcat -p -a -s 300
+
+cowsay -f eyes "WELCOME  SHAFIKUL" | lolcat -p -a -s 300
+cowsay -h
+man cowsay
+cowsay -f
+
+cowsay -f eyes "WELCOME  SHAFIKUL" | lolcat -p -a -s 300
+cowsay -f eyes "WELCOME  SHAFIKUL" | lolcat -p -a -s 500
+cowsay -f eyes "WELCOME  SHAFIKUL" | lolcat -p -a -s 600
+lolcat -h
+cowsay -f eyes "WELCOME  SHAFIKUL" | lolcat -p
+lolcat -h
+cowsay -f eyes "WELCOME  SHAFIKUL" | lolcat
+lolcat -h
+cowsay -f eyes "WELCOME  SHAFIKUL" | lolcat -S
+lolcat -h
+cowsay -f eyes "WELCOME  SHAFIKUL" | lolcat -t
+man lolcat
+cowsay -f eyes "WELCOME  SHAFIKUL" | lolcat -a
+lolcat -h
+cowsay -f eyes "WELCOME  SHAFIKUL" | lolcat -a -F
+lolcat -h
+ls
+nano ~/.zshrc
+touch hell{1..100}
+ls
+rm -rf **
+touch hell{1..100}
+touch new{1..100}
+ls
+rm -rf new*
+ls
+figlet -f slant  "WELCOME  SHAFIKUL" | lolcat -a -d 1 -s 300
+figlet -f slant  "SHAFIKUL" | lolcat -a -d 1 -s 300
+figlet -f digital -c "ETHICS COME BEFORE HACKING
+figlet -f digital -c "ETHICS COME BEFORE HACKING" | lolcat
+history
+figlet -f slant  "WELCOME  SHAFIKUL" | lolcat -a -d 1 -s 300
+cowsay -f eyes "WELCOME  SHAFIKUL" | lolcat -a -d 1
+figlet -f digital -c "ETHICS COME BEFORE HACKING" | lolcat
+sudo nano ~/.bashrc
+cd /home
+ls
+cd shafikul/
+ls
+ls -a
+nano .zshrc
+whoami
+sudo find / -type f -name apache2
+locate rm
+whereis rm
+ls /
+whoami
+host
+hostname
+whereis ls
+whereis rm
+which rm
+sudo nano /usr/bin/rm
+sudo apt install okular okular-extra-backends
+sudo apt-get install dhclient
+sudo apt install isc-dhcp-client
+sudo systemctl restart isc-dhcp-client
+ifconig
+ifconfig
+sudo apt install isc-dhcp-client
+sudo systemctl restart isc-dhcp-client
+$sudo systemctl restart isc-dhcp-client
+Failed to restart isc-dhcp-client.service: Unit isc-dhcp-client.service not found.
+systemctl list-unit-files | grep dhcp
+systemctl status isc-dhcp-server.service
+sudo systemctl start isc-dhcp-server.service
+sudo journalctl -xeu isc-dhcp-server.service
+sudo dhcpd -t
+sudo nano /etc/dhcp/dhcpd.conf
+sudo gedit /etc/dhcp/dhcpd.conf
+ifconfig
+service isc-dhcp-server stop
+ls
+service isc-dhcp-server status
+ifconfig
+sudo gedit /etc/dhcp/dhcpd.cong
+sudo gedit /etc/dhcp/dhcpd.conf
+ifconfig
+ifconfig -h
+man ifconfig
+ls
+ifconfig
+
+dhclient wlp0s20f3
+sudo dhclient wlp0s20f3
+ls
+ifconfig
+ifconfig wlp0s20f3 down
+sudo  ifconfig wlp0s20f3 down
+sudo dhclient wlp0s20f3
+ifconfig
+sudo dhclient wlp0s20f3
+ifconfig
+sudo nano /var/lib/dhcp/dhclient.leases
+sudo cp /var/lib/dhcp/dhclient.leases dhclient.leases.example
+ls /var/lib/dhcp
+cd /var/lib/dhcp
+ls
+cp dhclient.leases dhclient.leases.example
+sudo cp dhclient.leases dhclient.leases.example
+ls
+sudo rm dhclient.leases
+ls
+sudo service network-manager restart
+sudo NetworkManager restart
+ls
+
+---
+
+---
+
+---
+
+---
+
+—go abobe
+
+sudo systemctl restart NetworkManager
+
+sudo pkill firefox-esr
+
+dpkg -l
+
+*ls ~/.bash*
+
+ls | grep .bash*
+ls
+ls -a | grep .bash*
+ls -a | grep .*a
+locate alish
+find / -name alias
+
+sudo lshw
+lspci
+
+service --status-all
+
+service --status-all | grep tor
+
+df -h
+du -sh *
+du -s
+du -sh
+du -h
+man du
+sudo du -sch /.[!.]* /*
+dig
+dig -h
+
+df -h
+
+sudo service tor start
+sudo service tor status
+
+whois [google.com](http://google.com/)
+
+[Sub Page](https://www.notion.so/Sub-Page-fd79b710c0244beb923508e1f8c064b1?pvs=21)
